@@ -24,7 +24,11 @@ We need to connect following ports from Raspberry.
 - 9 - GND
 
 # Create a Service, make it started task :)
+
+
+# Resources
 https://blog.usedbytes.com/2019/11/run-at-startup-without-rc.local/
+https://manpages.ubuntu.com/manpages/impish/man7/python-evdev.7.html
 
 
 
