@@ -45,6 +45,41 @@ WantedBy=multi-user.target
 systemctl enable dracula2
 systemctl start dracula2
 ```
+# External Sound card
+Pretty tricky part :)
+install alsa, alsa-utils, alsa-tools
+in ~HOME create .asoundrc
+```
+pcm.!default {
+  type asym
+  playback.pcm {
+    type plug
+    slave.pcm "output"
+  }
+  capture.pcm {
+    type plug
+    slave.pcm "input"
+  }
+}
+
+pcm.output {
+  type hw
+  card 1
+}
+
+ctl.!default {
+  type hw
+  card 1
+}
+```
+if the sound does not work, UTFG... sorry, i am no linux guru
+
+# Keyboard
+use listDevices.py to list your USB devices, find your keyboard and aply respective value to dracula2.py
+```
+keyboard = InputDevice('/dev/input/event0')
+```
+TODO: list devices, identify bellowed one by name and use its ID .... any volunteer?
 
 # Resources
 https://blog.usedbytes.com/2019/11/run-at-startup-without-rc.local/
