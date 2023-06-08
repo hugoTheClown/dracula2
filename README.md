@@ -26,7 +26,7 @@ We need to connect following ports from Raspberry.
 # Create a Service, make it started task :)
 in /etc/systemd/system create a file e.g. dracula2.service
 
-`
+```
 [Unit]
 Description=dracula2.py
 After=network.target
@@ -40,9 +40,11 @@ ExecStart=python dracula2.py >> /home/dracula/dracula2/dracula2.log 2>&1
 
 [Install]
 WantedBy=multi-user.target
-`
+```
+```
 systemctl enable dracula2
 systemctl start dracula2
+```
 
 # Resources
 https://blog.usedbytes.com/2019/11/run-at-startup-without-rc.local/
